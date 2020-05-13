@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const connectDb = require("./connection");
 const PORT = 8080;
 
 
