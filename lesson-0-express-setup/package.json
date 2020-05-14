@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "lint": "eslint ./src --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js"
@@ -19,6 +20,7 @@
     "mongoose": "^5.9.13"
   },
   "devDependencies": {
+    "eslint": "^7.0.0",
     "nodemon": "^2.0.3"
   }
 }
