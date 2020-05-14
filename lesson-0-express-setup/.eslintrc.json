@@ -1,12 +1,12 @@
 {
     "env": {
-        "browser": true,
+        "node": true,
         "commonjs": true,
+        "browser": false,
         "es6": true
     },
     "extends": "eslint:recommended",
     "globals": {
-        "process": true,
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
