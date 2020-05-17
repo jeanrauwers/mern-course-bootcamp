@@ -18,5 +18,5 @@ So please share this video with your friends and leave the like.
 
 ## Videos on youtube
 
-* [Episode 1](https://www.youtube.com/watch?v=_kP5e9fi9yo&t=48s)
+* [Episode 0](https://www.youtube.com/watch?v=_kP5e9fi9yo&t=48s)
 
