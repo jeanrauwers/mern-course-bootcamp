@@ -5,7 +5,6 @@
   "main": "server.js",
   "scripts": {
     "lint": "eslint ./src --fix",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js"
   },
