@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const RegisterController = require('./controllers/RegisterController')
+const UserController = require('./controllers/UserController')
 
 const app = express()
 const PORT = process.env.PORT || 8080
@@ -21,7 +21,7 @@ app.get('/register', (req, res) => {
 	res.send('Welcome to Register \n')
 })
 
-app.post('/register', RegisterController.store)
+app.post('/register', UserController.store)
 
 try {
 	mongoose.connect(process.env.MONGO_DB_SECRET, {
