@@ -9,7 +9,9 @@ User registration and authentication
 * Subscribe to an event
 * Delete Events
 * Upload images to the server
+* Authentication 
 * Session control (user will see specific content)
+* Website notification using web sockets (sockets.io) 
 
 <strong>And if the series reaches more than 1000 likes I will create a React-Native version for it!</strong>
 
