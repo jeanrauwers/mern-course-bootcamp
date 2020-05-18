@@ -14,7 +14,10 @@ We will build a <strong>Sports App</strong> for creating sports events and the a
 * Upload images to the server
 * Website notification using web sockets (sockets.io) 
 
+### Milestones of the project
 <strong>And if the series get more than 1000 likes in the first video I will create a React-Native app for it!</strong>
+<strong>And if the series get more than 5000 likes in the first video I will add social media functionality such as user profile</strong>
+
 
 So please share this video with your friends and leave the like.
 
