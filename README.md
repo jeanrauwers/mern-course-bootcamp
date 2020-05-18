@@ -4,7 +4,7 @@ This is a series video were we going to build a full-stack application from scra
 
 We will build a <strong>Sports App</strong> for creating sports events and the app will include:
 
-* User registration and authentication (maybe add facebook/gmail login if series becomes popular)
+* User registration and authentication (maybe add facebook/gmail login if series becomes popular 1000+ likes ) 
 * Hashing password for security 
 * Authentication 
 * Session control (user will see specific content)
