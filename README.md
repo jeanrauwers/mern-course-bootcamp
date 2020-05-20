@@ -28,3 +28,4 @@ We have a discord group: [invite link](https://discord.gg/Ppdb7zd)
 
 * [Episode 0](https://www.youtube.com/watch?v=_kP5e9fi9yo)
 * [Episode 1](https://www.youtube.com/watch?v=U3B2TdYMmmU)
+* [Episode 2](https://www.youtube.com/watch?v=STbqBxgKD2I)
