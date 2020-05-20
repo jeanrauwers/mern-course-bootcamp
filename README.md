@@ -11,7 +11,7 @@ We will build a <strong>Sports App</strong> for creating sports events and the a
 * Search for events using filters (Running, Cycling or Swimming) 
 * Sign UP for event in order to participate
 * Upload images to the server
-* Website notification using web sockets (in order to approve or cancel the sinup requests) 
+* Website notification using web sockets (in order to approve or cancel the Sign UP requests) 
 
 ### Milestones of the project
 
