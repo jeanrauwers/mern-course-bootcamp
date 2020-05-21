@@ -22,7 +22,7 @@ We will build a <strong>Sports App</strong> for creating sports events and the a
 So please share this video with your friends and leave the like.
 
 ## Need help?
-We have a discord group: [invite link](https://discord.gg/Ppdb7zd)
+[We have a discord group](https://discord.gg/Ppdb7zd)
 
 ## Videos on youtube
 
