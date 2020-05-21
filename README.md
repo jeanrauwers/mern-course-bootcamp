@@ -29,3 +29,5 @@ So please share this video with your friends and leave the like.
 * [Episode 0](https://www.youtube.com/watch?v=_kP5e9fi9yo)
 * [Episode 1](https://www.youtube.com/watch?v=U3B2TdYMmmU)
 * [Episode 2](https://www.youtube.com/watch?v=STbqBxgKD2I)
+* [Episode 3](https://www.youtube.com/watch?v=73WRxi49Czo)
+
