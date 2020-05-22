@@ -6,7 +6,7 @@ We will build a <strong>Sports App</strong> for creating sports events and the a
 
 * User registration and authentication (maybe add facebook/gmail login if the series becomes popular) 
 * Hashing password for security 
-* Session control (user will see specific content if allowed)
+* Session control
 * CRUD operations (Create, read, update and delete) 
 * Search for events using filters (Running, Cycling or Swimming) 
 * Sign UP for event in order to participate
