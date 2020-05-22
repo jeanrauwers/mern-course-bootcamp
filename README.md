@@ -30,4 +30,4 @@ So please share this video with your friends and leave the like.
 * [Episode 1](https://www.youtube.com/watch?v=U3B2TdYMmmU)
 * [Episode 2](https://www.youtube.com/watch?v=STbqBxgKD2I)
 * [Episode 3](https://www.youtube.com/watch?v=73WRxi49Czo)
-
+* [Episode 4](https://www.youtube.com/watch?v=T_3xUTF86L8)
