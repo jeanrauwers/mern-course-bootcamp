@@ -9,20 +9,27 @@ module.exports = {
 
         const user = await User.findById(user_id)
 
+        console.log("Event has been hit" , title, description, price, sport, user_id, filename)
+
         if (!user) {
             return res.status(400).json({ message: 'User does not exist!' })
         }
 
-        const event = await Event.create({
-            title,
-            description,
-            sport,
-            price: parseFloat(price),
-            user: user_id,
-            thumbnail: filename
-        })
+        try {
+            const event = await Event.create({
+                title,
+                description,
+                sport,
+                price: parseFloat(price),
+                user: user_id,
+                thumbnail: filename
+            })
 
-        return res.json(event);
+            return res.json(event);
+        } catch (error) {
+            return res.status(400).json({ message: error })
+        }
+
     },
 
     async delete(req, res) {
