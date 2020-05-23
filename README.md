@@ -2,7 +2,7 @@
 
 This is a series video were we going to build a full-stack application from scratch using the MERN STACK ( MongoDB, Express, React.js and Nodejs).
 
-We will build a <strong>Sports App</strong> for creating sports events and the app will include:
+We will build a <strong>Sports Web App</strong> for creating sports events and the app will include:
 
 * User registration and authentication (maybe add facebook/gmail login if the series becomes popular) 
 * Hashing password for security 
