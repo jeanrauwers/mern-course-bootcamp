@@ -31,6 +31,7 @@ So please share this video with your friends and leave the like.
 * [Episode 2](https://www.youtube.com/watch?v=STbqBxgKD2I)
 * [Episode 3](https://www.youtube.com/watch?v=73WRxi49Czo)
 * [Episode 4](https://www.youtube.com/watch?v=T_3xUTF86L8)
+* [Episode 5](https://www.youtube.com/watch?v=cN8DFNteYDc)
 
 ## Want to know more about my motivation for this project
 [read my blog post](http://italktech.io/mern-coding-bootcamp/)
