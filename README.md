@@ -32,6 +32,7 @@ So please share this video with your friends and leave the like.
 * [Episode 3](https://www.youtube.com/watch?v=73WRxi49Czo) - Add Aprovall and Reject controller and routes  
 * [Episode 4](https://www.youtube.com/watch?v=T_3xUTF86L8) - Add React on the frontend and Login and Register pages
 * [Episode 5](https://www.youtube.com/watch?v=cN8DFNteYDc) - Add EventsPage and create events from the frontend
+* [Episode 6](https://www.youtube.com/watch?v=IQnNYIuOvxw) - Add Styles for EventsPage, Login, Register and fix some small bugs
 
 ## Want to know more about my motivation for this project
 [read my blog post](http://italktech.io/mern-coding-bootcamp/)
