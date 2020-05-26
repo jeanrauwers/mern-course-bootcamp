@@ -12,11 +12,11 @@ export default function Login({ history }) {
         evt.preventDefault();
         const response = await api.post('/login', { email, password })
         const userId = response.data._id || false;
-
+        
         try {
             if (userId) {
                 localStorage.setItem('user', userId)
-                history.push('/dashboard')
+                history.push('/')
             } else {
                 const { message } = response.data
                 setError(true)
@@ -27,7 +27,8 @@ export default function Login({ history }) {
                 }, 2000)
             }
         } catch (error) {
-
+            setError(true)
+            setErrorMessage("Error, the server returned an error")
         }
     }
 
@@ -37,13 +38,13 @@ export default function Login({ history }) {
             <p>Please <strong>Login</strong> into your account</p>
             <Form onSubmit={handleSubmit}>
                 <div className="input-group">
-                <FormGroup className="form-group-"></FormGroup>
-                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                    <Input type="email" name="email" id="email" placeholder="Your email" onChange={evt => setEmail(evt.target.value)} />
-                </FormGroup>
-                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                    <Input type="password" name="password" id="password" placeholder="Your password" onChange={evt => setPassword(evt.target.value)} />
-                </FormGroup>
+                    <FormGroup className="form-group-"></FormGroup>
+                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                        <Input type="email" name="email" id="email" placeholder="Your email" onChange={evt => setEmail(evt.target.value)} />
+                    </FormGroup>
+                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                        <Input type="password" name="password" id="password" placeholder="Your password" onChange={evt => setPassword(evt.target.value)} />
+                    </FormGroup>
                 </div>
                 <FormGroup>
                     <Button className="submit-btn">Submit</Button>
@@ -53,7 +54,7 @@ export default function Login({ history }) {
                 </FormGroup>
             </Form>
             {error ? (
-                <Alert className="event-validation" color="danger"> Missing required information</Alert>
+                <Alert className="event-validation" color="danger"> {errorMessage}</Alert>
             ) : ""}
         </Container>
     );

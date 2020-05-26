@@ -1,0 +1,33 @@
+ul.events-list {
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin-bottom: 30px;
+}
+
+ul.events-list li {
+    display: flex;
+    flex-direction: column;
+}
+
+ul.events-list li header {
+    width: 100%;
+    height: 240px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+}
+
+ul.events-list li strong{
+    margin-top: 12px;
+    font-size: 24px;
+    color: #444;
+}
+
+@media (max-width:768px){
+    ul.events-list{
+        grid-template-columns: 1fr;
+    }
+}
