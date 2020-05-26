@@ -15,8 +15,8 @@ We will build a <strong>Sports Web App</strong> for creating sports events and t
 
 ### Milestones of the project
 
-<strong>Series get more than 1000 likes in the first video I will create a React-Native app for it!</strong><br />
-<strong>Series get more than 5000 likes in the first video I will add Social Media functionality such as user profile</strong><br />
+Series get more than <strong>1000 likes in the first video</strong> I will create a React-Native app for it!<br />
+Series get more than <strong>5000 likes in the first video</strong> I will add Social Media functionality such as user profile<br />
 
 So please share this video with your friends and leave the like.
 
