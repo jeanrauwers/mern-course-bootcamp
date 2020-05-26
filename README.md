@@ -16,7 +16,8 @@ We will build a <strong>Sports Web App</strong> for creating sports events and t
 ### Milestones of the project
 
 <strong>And if the series get more than 1000 likes in the first video I will create a React-Native app for it!</strong>
-<strong>And if the series get more than 5000 likes in the first video I will add social media functionality such as user profile</strong>
+<strong>And if the series get more than 5000 likes in the first video I will add social media functionality such as user profile
+</strong>
 
 
 So please share this video with your friends and leave the like.
@@ -33,6 +34,7 @@ So please share this video with your friends and leave the like.
 * [Episode 4](https://www.youtube.com/watch?v=T_3xUTF86L8) - Add React on the frontend and Login and Register pages
 * [Episode 5](https://www.youtube.com/watch?v=cN8DFNteYDc) - Add EventsPage and create events from the frontend
 * [Episode 6](https://www.youtube.com/watch?v=IQnNYIuOvxw) - Add Styles for EventsPage, Login, Register and fix some small bugs
+* [Episode 7](https://www.youtube.com/watch?v=2by22YOUmG8) - Add Dashboard page and base styles
 
 ## Want to know more about my motivation for this project
 [read my blog post](http://italktech.io/mern-coding-bootcamp/)
