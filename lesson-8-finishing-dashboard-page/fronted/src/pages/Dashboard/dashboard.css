@@ -26,6 +26,18 @@ ul.events-list li strong{
     color: #444;
 }
 
+
+div.filter-panel{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+ul.events-list header div {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 @media (max-width:768px){
     ul.events-list{
         grid-template-columns: 1fr;
