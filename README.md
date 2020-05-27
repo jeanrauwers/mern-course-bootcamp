@@ -33,6 +33,7 @@ So please share this video with your friends and leave the like.
 * [Episode 5](https://www.youtube.com/watch?v=cN8DFNteYDc) - Add EventsPage and create events from the frontend
 * [Episode 6](https://www.youtube.com/watch?v=IQnNYIuOvxw) - Add Styles for EventsPage, Login, Register and fix some small bugs
 * [Episode 7](https://www.youtube.com/watch?v=2by22YOUmG8) - Add Dashboard page and base styles
+* [Episode 8](https://www.youtube.com/watch?v=aQTNZcy6tnU) - Finish Dashboard and Add delete functionality 
 
 ## Want to know more about my motivation for this project?
 [Read my blog post](http://italktech.io/mern-coding-bootcamp/)
