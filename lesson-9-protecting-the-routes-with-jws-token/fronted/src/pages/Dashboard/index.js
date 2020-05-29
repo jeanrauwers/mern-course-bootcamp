@@ -6,11 +6,12 @@ import './dashboard.css'
 //Dashboard will show all the events 
 export default function Dashboard({ history }) {
     const [events, setEvents] = useState([]);
-    const user_id = localStorage.getItem('user');
+    const user = localStorage.getItem('user');
+    const user_id = localStorage.getItem('user_id');
+
     const [rSelected, setRSelected] = useState(null);
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false)
-
 
     useEffect(() => {
         getEvents()
@@ -22,28 +23,38 @@ export default function Dashboard({ history }) {
     }
 
     const myEventsHandler = async () => {
-        setRSelected('myevents')
-        const response = await api.get('/user/events', { headers: { user_id } })
-        setEvents(response.data)
+        try {
+            setRSelected('myevents')
+            const response = await api.get('/user/events', { headers: { user: user } })
+            setEvents(response.data.events)
+        } catch (error) {
+            history.push('/login');
+
+        }
+
     }
 
     const getEvents = async (filter) => {
-        const url = filter ? `/dashboard/${filter}` : '/dashboard'
-        const response = await api.get(url, { headers: { user_id } })
+        try {
+            const url = filter ? `/dashboard/${filter}` : '/dashboard';
+            const response = await api.get(url, { headers: { user: user } })
 
-        setEvents(response.data)
+            setEvents(response.data.events)
+        } catch (error) {
+            history.push('/login');
+        }
+
     };
 
-    const deleteEventHandler = async(eventId) => {
-        
+    const deleteEventHandler = async (eventId) => {
         try {
-            await api.delete(`/event/${eventId}`);
+            await api.delete(`/event/${eventId}`, { headers: { user: user } });
             setSuccess(true)
             setTimeout(() => {
                 setSuccess(false)
                 filterHandler(null)
             }, 2500)
-            
+
         } catch (error) {
             setError(true)
             setTimeout(() => {
@@ -68,7 +79,7 @@ export default function Dashboard({ history }) {
                 {events.map(event => (
                     <li key={event._id}>
                         <header style={{ backgroundImage: `url(${event.thumbnail_url})` }}>
-                        {event.user === user_id ? <div><Button color="danger"  size="sm"onClick={() => deleteEventHandler(event._id)}>Delete</Button></div>  : ""}
+                            {event.user === user_id ? <div><Button color="danger" size="sm" onClick={() => deleteEventHandler(event._id)}>Delete</Button></div> : ""}
 
                         </header>
                         <strong>{event.title}</strong>
@@ -79,7 +90,7 @@ export default function Dashboard({ history }) {
                     </li>
                 ))}
             </ul>
-                {error ? (
+            {error ? (
                 <Alert className="event-validation" color="danger"> Error when deleting event! </Alert>
             ) : ""}
             {success ? (

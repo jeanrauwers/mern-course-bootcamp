@@ -1,14 +1,15 @@
-const express = require('express')
-const multer = require('multer')
+const express = require('express');
+const multer = require('multer');
+const verifyToken = require('./config/verifyToken');
 
-const UserController = require('./controllers/UserController')
-const EventController = require('./controllers/EventController')
-const DashboardController = require('./controllers/DashboardController')
-const LoginController = require('./controllers/LoginController')
-const RegistrationController = require('./controllers/RegistrationController')
-const ApprovalController = require('./controllers/ApprovalController')
-const RejectionController = require('./controllers/RejectionController')
-const uploadConfig = require('./config/upload')
+const UserController = require('./controllers/UserController');
+const EventController = require('./controllers/EventController');
+const DashboardController = require('./controllers/DashboardController');
+const LoginController = require('./controllers/LoginController');
+const RegistrationController = require('./controllers/RegistrationController');
+const ApprovalController = require('./controllers/ApprovalController');
+const RejectionController = require('./controllers/RejectionController');
+const uploadConfig = require('./config/upload');
 
 const routes = express.Router();
 const upload = multer(uploadConfig);
@@ -27,14 +28,14 @@ routes.post('/registration/:registration_id/rejections', RejectionController.rej
 routes.post('/login', LoginController.store)
 
 //Dashboard
-routes.get('/dashboard/:sport', DashboardController.getAllEvents)
-routes.get('/dashboard', DashboardController.getAllEvents)
-routes.get('/user/events', DashboardController.getEventsByUserId)
-routes.get('/event/:eventId', DashboardController.getEventById)
+routes.get('/dashboard/:sport', verifyToken, DashboardController.getAllEvents)
+routes.get('/dashboard', verifyToken, DashboardController.getAllEvents)
+routes.get('/user/events', verifyToken, DashboardController.getEventsByUserId)
+routes.get('/event/:eventId', verifyToken, DashboardController.getEventById)
 
 //Events
-routes.post('/event', upload.single("thumbnail"), EventController.createEvent)
-routes.delete('/event/:eventId', EventController.delete)
+routes.post('/event',verifyToken, upload.single("thumbnail"), EventController.createEvent)
+routes.delete('/event/:eventId',verifyToken, EventController.delete)
 
 //User
 routes.post('/user/register', UserController.createUser)

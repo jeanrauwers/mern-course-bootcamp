@@ -6,6 +6,21 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 8000
 
+
+// Add JWT token to project (OK)
+
+// Return token when login (OK)
+
+// Send token on request (OK)
+
+// Create function to protect routers 
+
+// Add Funtion/Middleware  to routers
+
+// Modify response to decode the token
+
+
+
 app.use(cors())
 app.use(express.json())
 

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import api from '../../services/api';
 import { Alert, Container, Button, Form, FormGroup, Input, Label, DropdownItem, DropdownMenu, DropdownToggle, ButtonDropdown } from 'reactstrap';
 import cameraIcon from '../../assets/camera.png'
@@ -14,6 +14,11 @@ export default function EventsPage({ history }) {
     const [error, setError] = useState(false)
     const [success, setSuccess] = useState(false)
     const [dropdownOpen, setOpen] = useState(false);
+    const user = localStorage.getItem('user');
+
+    useEffect(() => {
+        if (!user) history.push('/login');
+    }, [])
 
     const toggle = () => setOpen(!dropdownOpen);
 
@@ -23,7 +28,6 @@ export default function EventsPage({ history }) {
 
     const submitHandler = async (evt) => {
         evt.preventDefault()
-        const user_id = localStorage.getItem('user');
 
         const eventData = new FormData();
 
@@ -43,7 +47,7 @@ export default function EventsPage({ history }) {
                 date !== "" &&
                 thumbnail !== null
             ) {
-                await api.post("/event", eventData, { headers: { user_id } })
+                await api.post("/event", eventData, { headers: { user } })
                 setSuccess(true)
                 setTimeout(() => {
                     setSuccess(false)
@@ -63,7 +67,6 @@ export default function EventsPage({ history }) {
 
     const sportEventHandler = (sport) => setSport(sport);
 
-    console.log(sport)
     return (
         <Container>
             <h2>Create your Event</h2>
