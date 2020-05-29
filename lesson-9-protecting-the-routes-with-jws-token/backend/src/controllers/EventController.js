@@ -6,7 +6,7 @@ module.exports = {
     createEvent(req, res) {
         jwt.verify(req.token, 'secret', async (err, authData) => {
             if (err) {
-                res.statusCode(403);
+                res.statusCode(401);
             } else {
                 const { title, description, price, sport, date } = req.body;
                 const { filename } = req.file;
@@ -40,7 +40,7 @@ module.exports = {
     delete(req, res) {
         jwt.verify(req.token, 'secret', async (err, authData) => {
             if (err) {
-                res.statusCode(403);
+                res.statusCode(401);
             } else {
                 const { eventId } = req.params;
                 try {

@@ -5,7 +5,7 @@ module.exports = {
     getEventById(req, res) {
         jwt.verify(req.token, 'secret', async (err, authData) => {
             if (err) {
-                res.sendStatus(403);
+                res.sendStatus(401);
             } else {
                 const { eventId } = req.params;
                 try {
@@ -24,7 +24,7 @@ module.exports = {
     getAllEvents(req, res) {
         jwt.verify(req.token, 'secret', async (err, authData) => {
             if (err) {
-                res.sendStatus(403);
+                res.sendStatus(401);
             } else {
                 const { sport } = req.params;
                 const query = sport ? { sport } : {}
@@ -46,7 +46,7 @@ module.exports = {
     getEventsByUserId(req, res) {
         jwt.verify(req.token, 'secret', async (err, authData) => {
             if (err) {
-                res.sendStatus(403);
+                res.sendStatus(401);
             } else {
 
                 const { user_id } = req.headers;
