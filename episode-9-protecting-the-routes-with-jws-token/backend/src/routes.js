@@ -1,21 +1,21 @@
-const express = require('express');
-const multer = require('multer');
-const verifyToken = require('./config/verifyToken');
+const express = require('express')
+const multer = require('multer')
+const verifyToken = require('./config/verifyToken')
 
-const UserController = require('./controllers/UserController');
-const EventController = require('./controllers/EventController');
-const DashboardController = require('./controllers/DashboardController');
-const LoginController = require('./controllers/LoginController');
-const RegistrationController = require('./controllers/RegistrationController');
-const ApprovalController = require('./controllers/ApprovalController');
-const RejectionController = require('./controllers/RejectionController');
-const uploadConfig = require('./config/upload');
+const UserController = require('./controllers/UserController')
+const EventController = require('./controllers/EventController')
+const DashboardController = require('./controllers/DashboardController')
+const LoginController = require('./controllers/LoginController')
+const RegistrationController = require('./controllers/RegistrationController')
+const ApprovalController = require('./controllers/ApprovalController')
+const RejectionController = require('./controllers/RejectionController')
+const uploadConfig = require('./config/upload')
 
-const routes = express.Router();
-const upload = multer(uploadConfig);
+const routes = express.Router()
+const upload = multer(uploadConfig)
 
 routes.get('/status', (req, res) => {
-    res.send({ status: 200 })
+	res.send({ status: 200 })
 })
 
 //Registration
@@ -34,11 +34,11 @@ routes.get('/user/events', verifyToken, DashboardController.getEventsByUserId)
 routes.get('/event/:eventId', verifyToken, DashboardController.getEventById)
 
 //Events
-routes.post('/event',verifyToken, upload.single("thumbnail"), EventController.createEvent)
+routes.post('/event',verifyToken, upload.single('thumbnail'), EventController.createEvent)
 routes.delete('/event/:eventId',verifyToken, EventController.delete)
 
 //User
 routes.post('/user/register', UserController.createUser)
 routes.get('/user/:userId', UserController.getUserById)
 
-module.exports = routes;
+module.exports = routes

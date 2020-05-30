@@ -1,19 +1,19 @@
-const Registration = require('../models/Registration');
+const Registration = require('../models/Registration')
 
 module.exports = {
-    async approval(req, res) {
-        const { registration_id } = req.params;
-        try {
-            const registration = await Registration.findById(registration_id);
+	async approval(req, res) {
+		const { registration_id } = req.params
+		try {
+			const registration = await Registration.findById(registration_id)
 
-            registration.approved = true;
+			registration.approved = true
 
-            await registration.save();
+			await registration.save()
 
-            return res.json(registration);
+			return res.json(registration)
 
-        } catch (error) {
-            return res.status(400).json(error)
-        }
-    }
+		} catch (error) {
+			return res.status(400).json(error)
+		}
+	}
 }
