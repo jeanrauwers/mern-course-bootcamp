@@ -23,6 +23,8 @@ So please share this video with your friends and leave the like.
 ## Need help?
 [We have a discord group](https://discord.gg/Ppdb7zd)
 
+## Demo
+
 ## Videos on youtube
 
 * [Project Demo](https://www.youtube.com/watch?v=vtuciNQFpyA) - Check what we are building
