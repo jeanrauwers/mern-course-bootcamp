@@ -25,6 +25,7 @@ So please share this video with your friends and leave the like.
 
 ## Videos on youtube
 
+* [Project Demo](https://www.youtube.com/watch?v=vtuciNQFpyA) - Check what we are building
 * [Episode 0](https://www.youtube.com/watch?v=_kP5e9fi9yo) - Setup env, mongoDB and User model and Controller
 * [Episode 1](https://www.youtube.com/watch?v=U3B2TdYMmmU) - Add routes setup and more end points
 * [Episode 2](https://www.youtube.com/watch?v=STbqBxgKD2I) - Add events route and controller
