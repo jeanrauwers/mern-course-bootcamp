@@ -1,22 +1,25 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const routes = require('./routes')
+const routes =require('./routes')
 const path = require('path')
-const http = require('http');
-const socketio = require('socket.io');
+const app = express()
 const PORT = process.env.PORT || 8000
 
 
-const app = express();
-const server = http.Server(app);
-const io = socketio(server);
+// Add JWT token to project (OK)
 
-io.on('connection', socket => {
-	console.log('User is connect', socket.id)
+// Return token when login (OK)
 
-	io.emit('jean', { data: "hello-world" })
-})
+// Send token on request (OK)
+
+// Create function to protect routers 
+
+// Add Funtion/Middleware  to routers
+
+// Modify response to decode the token
+
+
 
 app.use(cors())
 app.use(express.json())
@@ -38,6 +41,6 @@ try {
 app.use('/files', express.static(path.resolve(__dirname, '..', 'files')))
 app.use(routes)
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
 	console.log(`Listening on ${PORT}`)
 })

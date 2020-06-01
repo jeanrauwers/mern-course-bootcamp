@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 import moment from 'moment';
 import { Button, ButtonGroup, Alert } from 'reactstrap';
-import socketio from 'socket.io-client';
 import './dashboard.css'
 //Dashboard will show all the events 
 export default function Dashboard({ history }) {
@@ -16,10 +15,6 @@ export default function Dashboard({ history }) {
 
     useEffect(() => {
         getEvents()
-    }, [])
-
-    useEffect(() => {
-        const socket = socketio('http://localhost:8000/')
     }, [])
 
     const filterHandler = (query) => {
@@ -68,12 +63,6 @@ export default function Dashboard({ history }) {
         }
     }
 
-    const logoutHandler = () => {
-        localStorage.removeItem('user')
-        localStorage.removeItem('user_id')
-        history.push('/login');
-    }
-
     return (
         <>
             <div className="filter-panel">
@@ -84,10 +73,7 @@ export default function Dashboard({ history }) {
                     <Button color="primary" onClick={() => filterHandler("cycling")} active={rSelected === 'cycling'}>Cycling</Button>
                     <Button color="primary" onClick={() => filterHandler('swimming')} active={rSelected === 'swimming'}>Swimming</Button>
                 </ButtonGroup>
-                <ButtonGroup>
-                    <Button color="secondary" onClick={() => history.push('events')}>Events</Button>
-                    <Button color="danger" onClick={logoutHandler}>Logout</Button>
-                </ButtonGroup>
+                <Button color="secondary" onClick={() => history.push('events')}>Events</Button>
             </div>
             <ul className="events-list">
                 {events.map(event => (
