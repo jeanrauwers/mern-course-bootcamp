@@ -17,7 +17,6 @@ export default function Register({ history }) {
 
         if (email !== "" && password !== "" && firstName !== "" && lastName !== "") {
             const response = await api.post('/user/register', { email, password, firstName, lastName })
-            console.log(response)
             const user = response.data.user || false;
             const user_id = response.data.user_id || false;
 
@@ -25,7 +24,7 @@ export default function Register({ history }) {
                 localStorage.setItem('user', user)
                 localStorage.setItem('user_id', user_id)
 
-                history.push('/')
+                history.push('/dashboard')
             } else {
                 const { message } = response.data
                 setError(true)

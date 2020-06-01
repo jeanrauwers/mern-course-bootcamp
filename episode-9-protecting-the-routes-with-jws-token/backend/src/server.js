@@ -12,6 +12,15 @@ const app = express();
 const server = http.Server(app);
 const io = socketio(server);
 
+io.on('connection', socket => {
+	console.log('User is connect', socket.id)
+
+	io.emit('jean', { data: "hello-world" })
+})
+
+app.use(cors())
+app.use(express.json())
+
 if (process.env.NODE_ENV !== 'production') {
 	require('dotenv').config()
 }
@@ -26,22 +35,6 @@ try {
 	console.log(error)
 }
 
-const connectUsers = {};
-
-io.on('connection', socket => {
-	const { user } = socket.handshake.query;
-
-	connectUsers[user] = socket.id;
-})
-
-//app.use()
-app.use((req, res, next) => {
-	req.io = io;
-	req.connectUsers = connectUsers;
-	return next();
-})
-app.use(cors())
-app.use(express.json())
 app.use('/files', express.static(path.resolve(__dirname, '..', 'files')))
 app.use(routes)
 

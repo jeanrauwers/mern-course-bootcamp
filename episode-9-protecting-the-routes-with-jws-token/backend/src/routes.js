@@ -19,7 +19,7 @@ routes.get('/status', (req, res) => {
 })
 
 //Registration
-routes.post('/registration/:eventId', verifyToken, RegistrationController.create)
+routes.post('/registration/:eventId', RegistrationController.create)
 routes.get('/registration/:registration_id', RegistrationController.getRegistration)
 routes.post('/registration/:registration_id/approvals', ApprovalController.approval)
 routes.post('/registration/:registration_id/rejections', RejectionController.rejection)
@@ -34,8 +34,8 @@ routes.get('/user/events', verifyToken, DashboardController.getEventsByUserId)
 routes.get('/event/:eventId', verifyToken, DashboardController.getEventById)
 
 //Events
-routes.post('/event', verifyToken, upload.single('thumbnail'), EventController.createEvent)
-routes.delete('/event/:eventId', verifyToken, EventController.delete)
+routes.post('/event',verifyToken, upload.single('thumbnail'), EventController.createEvent)
+routes.delete('/event/:eventId',verifyToken, EventController.delete)
 
 //User
 routes.post('/user/register', UserController.createUser)

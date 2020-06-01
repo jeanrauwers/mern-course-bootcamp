@@ -30,7 +30,7 @@ module.exports = {
 						user_id: userResponse._id
 					})
 				})
-
+				// return res.json(userResponse)
 			} else {
 				return res.status(200).json({ message: 'Email or Password does not match!' })
 			}
