@@ -20,14 +20,13 @@ ul.events-list li header {
     border-radius: 4px;
 }
 
-ul.events-list li strong{
+ul.events-list li strong {
     margin-top: 12px;
     font-size: 24px;
     color: #444;
 }
 
-
-div.filter-panel{
+div.filter-panel {
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
@@ -38,8 +37,20 @@ ul.events-list header div {
     flex-direction: row-reverse;
 }
 
-@media (max-width:768px){
-    ul.events-list{
+ul.notifications {
+    list-style: none;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+ul.notifications li {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@media (max-width: 768px) {
+    ul.events-list {
         grid-template-columns: 1fr;
     }
 }

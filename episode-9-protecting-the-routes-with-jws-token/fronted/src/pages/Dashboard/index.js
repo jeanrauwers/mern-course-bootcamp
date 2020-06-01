@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import api from '../../services/api';
 import moment from 'moment';
 import { Button, ButtonGroup, Alert } from 'reactstrap';
@@ -14,15 +14,25 @@ export default function Dashboard({ history }) {
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false)
     const [messageHandler, setMessageHandler] = useState('');
+    const [eventsRequests, setEventsRequests] = useState([]);
 
     useEffect(() => {
         getEvents()
     }, [])
 
+
+    const socket = useMemo(
+        () =>
+            socketio('http://localhost:8000/', { query: { user: user_id } }),
+        [user_id]
+    );
+
     useEffect(() => {
-        const socket = socketio('http://localhost:8000/', { query: { user: user_id } });
-        socket.on('registration_request', data => console.log(data));
-    }, [])
+        socket.on('registration_request', data => setEventsRequests([...eventsRequests, data]));
+    }, [eventsRequests, socket])
+
+
+
 
     const filterHandler = (query) => {
         setRSelected(query)
@@ -104,6 +114,23 @@ export default function Dashboard({ history }) {
 
     return (
         <>
+            <ul className="notifications">
+                {eventsRequests.map(request => {
+                    console.log(request)
+                    return (
+                        <li key={request._id}>
+                            <div>
+                                <strong>{request.user.email}</strong> Is requesting to register to your Event
+                                <strong>{request.event.title}</strong>
+                            </div>
+                            <ButtonGroup>
+                                <Button color="secondary" onClick={() => { }}>Accept</Button>
+                                <Button color="danger" onClick={() => { }}>Cancel</Button>
+                            </ButtonGroup>
+                        </li>
+                    )
+                })}
+            </ul>
             <div className="filter-panel">
                 <ButtonGroup>
                     <Button color="primary" onClick={() => filterHandler(null)} active={rSelected === null}>All Sports</Button>
@@ -132,12 +159,16 @@ export default function Dashboard({ history }) {
                     </li>
                 ))}
             </ul>
-            {error ? (
-                <Alert className="event-validation" color="danger"> {messageHandler} </Alert>
-            ) : ""}
-            {success ? (
-                <Alert className="event-validation" color="success"> {messageHandler}</Alert>
-            ) : ""}
+            {
+                error ? (
+                    <Alert className="event-validation" color="danger"> {messageHandler} </Alert>
+                ) : ""
+            }
+            {
+                success ? (
+                    <Alert className="event-validation" color="success"> {messageHandler}</Alert>
+                ) : ""
+            }
         </>
     )
 }
