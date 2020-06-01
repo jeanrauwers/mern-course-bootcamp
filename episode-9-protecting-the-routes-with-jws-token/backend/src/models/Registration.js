@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const RegistrationSchema = new mongoose.Schema({
-	date: String,
+	date: () => Date.now(),
 	approved: Boolean,
 	user: {
 		type: mongoose.Schema.Types.ObjectId,
