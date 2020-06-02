@@ -1,11 +1,11 @@
 const Registration = require('../models/Registration')
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken')
 
 module.exports = {
 	create(req, res) {
 		jwt.verify(req.token, 'secret', async (err, authData) => {
 			if (err) {
-				res.sendStatus(401);
+				res.sendStatus(401)
 			} else {
 				const user_id = authData.user._id
 				const { eventId } = req.params
