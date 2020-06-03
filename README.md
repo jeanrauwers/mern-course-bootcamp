@@ -37,6 +37,8 @@ So please share this video with your friends and leave the like.
 * [Episode 8](https://www.youtube.com/watch?v=aQTNZcy6tnU) - Finish Dashboard and Add delete functionality 
 * [Episode 9](https://www.youtube.com/watch?v=prOC9Px4wtg) - Add JWT tokens and protecting the routes
 * [Episode 10 - A](https://www.youtube.com/watch?v=sk_b31rfAKw) - Add Logout and sockets.io to web-app
+* [Episode 10 - B](https://www.youtube.com/watch?v=mypkhAFXPPo) - Fix register user and add notification for registering to events
+
 
 ## Want to know more about my motivation for this project?
 [Read my blog post](http://italktech.io/mern-coding-bootcamp/)
