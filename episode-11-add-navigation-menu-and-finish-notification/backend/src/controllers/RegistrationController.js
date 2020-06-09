@@ -19,9 +19,8 @@ module.exports = {
 					.populate('event')
 					.populate('user', '-password')
 					.execPopulate()
+				
 
-
-				console.log(registration.event.user)
 				
 				const ownerSocket = req.connectUsers[registration.event.user]
 

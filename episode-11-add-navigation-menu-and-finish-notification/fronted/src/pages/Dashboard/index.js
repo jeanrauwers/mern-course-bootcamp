@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import api from '../../services/api';
 import moment from 'moment';
-import { Button, ButtonGroup, Alert , Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from 'reactstrap';
+import { Button, ButtonGroup, Alert, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 import socketio from 'socket.io-client';
 import './dashboard.css'
 
@@ -17,6 +17,8 @@ export default function Dashboard({ history }) {
     const [messageHandler, setMessageHandler] = useState('')
     const [eventsRequest, setEventsRequest] = useState([])
     const [dropdownOpen, setDropDownOpen] = useState(false)
+    const [eventRequestMessage, setEventRequestMessage] = useState('')
+    const [eventRequestSuccess, setEventRequestSuccess] = useState(false)
 
     const toggle = () => setDropDownOpen(!dropdownOpen);
 
@@ -86,7 +88,6 @@ export default function Dashboard({ history }) {
     const registrationRequestHandler = async (event) => {
         try {
             await api.post(`/registration/${event.id}`, {}, { headers: { user } })
-
             setSuccess(true)
             setMessageHandler(`The request for the event ${event.title} was successfully!`)
             setTimeout(() => {
@@ -105,26 +106,64 @@ export default function Dashboard({ history }) {
         }
     }
 
+    const acceptEventHandler = async (eventId) => {
+        try {
+            await api.post(`/registration/${eventId}/approvals`, {}, { headers: { user } })
+            setEventRequestSuccess(true)
+            setEventRequestMessage('Event approved successfully!')
+            removeNotificationFromDashboard(eventId)
+            setTimeout(() => {
+                setEventRequestSuccess(false)
+                setEventRequestMessage('')
+            }, 2000)
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    const rejectEventHandler = async (eventId) => {
+        try {
+            await api.post(`/registration/${eventId}/rejections`, {}, { headers: { user } })
+            setEventRequestSuccess(true)
+            setEventRequestMessage('Event rejected successfully!')
+            removeNotificationFromDashboard(eventId)
+            setTimeout(() => {
+                setEventRequestSuccess(false)
+                setEventRequestMessage('')
+            }, 2000)
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    const removeNotificationFromDashboard = (eventId) => {
+        const newEvents = eventsRequest.filter((event) => event._id !== eventId)
+        setEventsRequest(newEvents)
+    }
+
     return (
         <>
             <ul className="notifications">
                 {eventsRequest.map(request => {
                     return (
-                        <li key={request.id}>
+                        <li key={request._id}>
                             <div>
                                 <strong>{request.user.email} </strong> is requesting to register to your Event <strong>{request.event.title}</strong>
                             </div>
                             <ButtonGroup>
-                                <Button color="secondary" onClick={() => { }}>Accept</Button>
-                                <Button color="danger" onClick={() => { }}>Cancel</Button>
+                                <Button color="secondary" onClick={() => acceptEventHandler(request._id)}>Accept</Button>
+                                <Button color="danger" onClick={() => rejectEventHandler(request._id)}>Reject</Button>
                             </ButtonGroup>
                         </li>
                     )
                 })}
             </ul>
+            {eventRequestSuccess ? <Alert color="success"> {eventRequestMessage}</Alert> : ""}
             <div className="filter-panel">
                 <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                    <DropdownToggle color="primary" caret> 
+                    <DropdownToggle color="primary" caret>
                         Filter
                     </DropdownToggle>
                     <DropdownMenu>
@@ -138,7 +177,7 @@ export default function Dashboard({ history }) {
             </div>
             <ul className="events-list">
                 {events.map(event => (
-                    <li key={event._id}>
+                    < li key={event._id} >
                         <header style={{ backgroundImage: `url(${event.thumbnail_url})` }}>
                             {event.user === user_id ? <div><Button color="danger" size="sm" onClick={() => deleteEventHandler(event._id)}>Delete</Button></div> : ""}
 

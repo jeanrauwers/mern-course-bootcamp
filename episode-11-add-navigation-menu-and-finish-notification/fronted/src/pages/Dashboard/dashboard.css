@@ -41,8 +41,6 @@ ul.events-list header div {
 ul.notifications {
     list-style: none;
     margin-bottom: 16px;
-    display: flex;
-    justify-content: space-between;
 }
 
 ul.notifications li {
