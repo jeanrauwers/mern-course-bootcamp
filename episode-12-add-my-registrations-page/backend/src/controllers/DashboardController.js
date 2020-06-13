@@ -31,7 +31,7 @@ module.exports = {
 
 				try {
 					const events = await Event.find(query)
-
+					
 					if (events) {
 						return res.json({ authData, events })
 					}
