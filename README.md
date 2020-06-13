@@ -40,7 +40,7 @@ So please share this video with your friends and leave the like.
 * [Episode 10 - B](https://www.youtube.com/watch?v=mypkhAFXPPo) - Fix register user and add notification for registering to events
 * [Episode 11 - A](https://www.youtube.com/watch?v=hYqadsJSpdY) - Add topNav, userContext (React ContextApi) and DropDown menu
 * [Episode 11 - B](https://www.youtube.com/watch?v=-Zh37vkUdmc) - Add Accept and Reject actions and protect the routes
-* [Episode 12](https://www.youtube.com/watch?v=-3eKJv_DopSU) - Add My Registrations Page and talk about the future of this project
+* [Episode 12](https://www.youtube.com/watch?v=3eKJv_DopSU) - Add My Registrations Page and talk about the future of this project
 
 ## Want to know more about my motivation for this project?
 [Read my blog post](http://italktech.io/mern-coding-bootcamp/)
