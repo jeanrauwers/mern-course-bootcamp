@@ -93,7 +93,7 @@ export default function EventsPage({ history }) {
                     </FormGroup>
                     <FormGroup>
                         <Label>Event date: </Label>
-                        <Input id="date" type="date" value={date} placeholder={'Event Price £0.00'} onChange={(evt) => setDate(evt.target.value)} />
+                        <Input id="date" type="date" value={date} onChange={(evt) => setDate(evt.target.value)} />
                     </FormGroup>
                     <FormGroup>
                         <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
