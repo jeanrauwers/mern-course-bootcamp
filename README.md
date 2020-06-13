@@ -21,7 +21,7 @@ Series get more than <strong>5000 likes in the first video</strong> I will add S
 So please share this video with your friends and leave the like.
 
 ## Need help?
-[We have a discord group](https://discord.gg/Ppdb7zd)
+[We have a discord group](https://discord.gg/7bsz7U5)
 
 ## Videos on youtube
 
