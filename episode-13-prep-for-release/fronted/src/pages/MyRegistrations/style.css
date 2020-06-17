@@ -1,0 +1,35 @@
+.events {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.events li {
+    padding: 30px;
+    margin: 1rem;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.events div {
+    margin-top: 0.5rem;
+}
+
+.events-details span {
+    margin: 0.5rem;
+}
+
+.Approved {
+    color: green;
+}
+
+.Rejected {
+    color: red;
+}
+
+.Pending {
+    color: blue;
+}
