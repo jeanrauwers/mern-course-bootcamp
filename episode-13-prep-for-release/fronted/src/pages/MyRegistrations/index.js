@@ -18,7 +18,7 @@ export default function MyRegistrations() {
             const response = await api.get('/registration', { headers: { user } })
             setMyEvents(response.data)
         } catch (error) {
-
+            console.log(error)
         }
 
     }
