@@ -49,7 +49,7 @@ So please share this video with your friends and leave the like.
 For deploying this project we will modificate our backend and start using the S3 data storage from AWS.
 Heroku does not keep your files into the server and because of that we are moving away from saving the images in disk to saving the images into the S3 that will host the images for us.
 You will need to create an AWS account and a new bucket that will be explained into the Episode 13-A
-Following the next episode 13-B we are spliting the Backend and Frontend into two separeted projects to take the advantage of Heroku's CI/CD that basicly deploy your code automaticly when detects a new code into your github repositorie.
+Following the next episode 13-B we are spliting the Backend and Frontend into two separeted projects to take the advantage of Heroku's CI/CD that basicly deploy your code automatically when detects a new code into your github repository.
 
 ## Want to know more about my motivation for this project?
 [Read my blog post](http://italktech.io/mern-coding-bootcamp/)
