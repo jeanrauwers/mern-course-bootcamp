@@ -24,7 +24,7 @@ app.get('/register', (req, res) => {
 app.post('/register', UserController.store)
 
 try {
-	mongoose.connect(process.env.MONGO_DB_SECRET, {
+	mongoose.connect(process.env.MONGO_DB_CONNECTION, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
