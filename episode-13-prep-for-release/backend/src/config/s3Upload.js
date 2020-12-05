@@ -11,7 +11,7 @@ const s3 = new aws.S3({
 module.exports = multer({
     storage: multersS3({
         s3: s3,
-        bucket: "mern-stack-free-bootcamp",
+        bucket: "mern-bootcamp-public-files",
         metadata: function (req, file, cb) {
             cb(null, { fieldName: file.fieldname })
         },
