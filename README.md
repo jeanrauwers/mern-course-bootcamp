@@ -51,6 +51,10 @@ Heroku does not keep your files into the server and because of that we are movin
 You will need to create an AWS account and a new bucket that will be explained into the Episode 13-A.
 Following the next episode 13-B we are spliting the Backend and Frontend into two separeted projects to take the advantage of Heroku's CI/CD that basically deploys your code automatically when it detects a new code into your github repository.
 
+## React Native Bootcamp 2021
+
+I started to work on the React Native client for this App, and you can track its progress and find more about it [here](https://github.com/jeanrauwers/react-native-bootcamp)
+
 # Fancy support my work so I can do more of it?
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?hosted_button_id=YT9MSXE2JBK46)
 
