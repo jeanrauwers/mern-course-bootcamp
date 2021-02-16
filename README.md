@@ -13,9 +13,9 @@ We will build a <strong>Sports Web App</strong> for creating sports events and t
 * Upload images to the server
 * Website notification using web sockets (in order to approve or refuse the Event Sign UP request) 
 
-### Milestones of the project
+## Milestones of the project
 
-Series get more than <strong>1000 Stars </strong> I will create a <strong>React-Native</strong> APP for it!<br />
+Series get more than <strong>1000 Stars </strong> I will create a <strong>React-Native</strong> APP for it!<br /> 
 Series get more than <strong>5000 Stars </strong> I will add Social Media functionality such as the USER profile<br />
 
 So please share this video with your friends and leave the like.
@@ -51,12 +51,12 @@ Heroku does not keep your files into the server and because of that we are movin
 You will need to create an AWS account and a new bucket that will be explained into the Episode 13-A.
 Following the next episode 13-B we are spliting the Backend and Frontend into two separeted projects to take the advantage of Heroku's CI/CD that basically deploys your code automatically when it detects a new code into your github repository.
 
-## React Native Bootcamp 2021
+# React Native Bootcamp 2021
 
-I started to work on the React Native client for this App, and you can track its progress and find more about it [here](https://github.com/jeanrauwers/react-native-bootcamp)
+The React Native Bootcamp is out we will build a client for this App, and you can track the progress and find more about it [here](https://github.com/jeanrauwers/react-native-bootcamp)
 
 # Fancy support my work so I can do more of it?
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?hosted_button_id=YT9MSXE2JBK46)
 
-## Want to know more about my motivation for this project?
+# Want to know more about my motivation for this project?
 [Read my blog post](http://italktech.io/mern-coding-bootcamp/)
