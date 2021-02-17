@@ -55,8 +55,8 @@ Following the next episode 13-B we are spliting the Backend and Frontend into tw
 
 The React Native Bootcamp is out we will build a client for this App, and you can track the progress and find more about it [here](https://github.com/jeanrauwers/react-native-bootcamp)
 
-# Fancy support my work so I can do more of it?
+## Fancy support my work so I can do more of it?
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?hosted_button_id=YT9MSXE2JBK46)
 
-# Want to know more about my motivation for this project?
+## Want to know more about my motivation for this project?
 [Read my blog post](http://italktech.io/mern-coding-bootcamp/)
