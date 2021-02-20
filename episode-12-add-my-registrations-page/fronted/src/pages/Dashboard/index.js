@@ -28,7 +28,7 @@ export default function Dashboard({ history }) {
 
     const socket = useMemo(
         () =>
-            socketio('http://localhost:8000/', { query: { user: user_id } }),
+            socketio.connect('http://localhost:8000/', { query: { user: user_id } }),
         [user_id]
     );
 
