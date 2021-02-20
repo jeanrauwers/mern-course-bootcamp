@@ -46,10 +46,10 @@ So please share this video with your friends and leave the like.
 
 
 ## Fix required for episode 10
-It is natural that after some time and a few updates something break into our codebase because many people forget to install the correct versions.
+It is natural that after some time and a few updates, something breaks because many people forget to install the same dependencies versions that I have used when recorded the Bootcamp.
 So I have decided to update socket.io and socket.io-client to the latest version (3.1.1).
 
-That will fix the cors issue that many of you are facing and prevent the Bootcamp to be outdated.
+That will fix the cors issue that many of you face and prevent the Bootcamp from being outdated.
 
 please check the code for the [server](https://github.com/jeanrauwers/mern-course-bootcamp/blob/master/episode-10-Add-websockets-and-fix-Register/backend/src/server.js) and the [client](https://github.com/jeanrauwers/mern-course-bootcamp/blob/master/episode-10-Add-websockets-and-fix-Register/fronted/src/pages/Dashboard/index.js).
 
