@@ -36,7 +36,7 @@ So please share this video with your friends and leave the like.
 * [Episode 7](https://www.youtube.com/watch?v=2by22YOUmG8) - Add Dashboard page and base styles
 * [Episode 8](https://www.youtube.com/watch?v=aQTNZcy6tnU) - Finish Dashboard and Add delete functionality 
 * [Episode 9](https://www.youtube.com/watch?v=prOC9Px4wtg) - Add JWT tokens and protecting the routes
-* [Episode 10 - A](https://www.youtube.com/watch?v=sk_b31rfAKw) - Add Logout and sockets.io to web-app
+* [Episode 10 - A](https://www.youtube.com/watch?v=sk_b31rfAKw) - Add Logout and sockets.io to web-app   *(Fix introduced please see it bellow)
 * [Episode 10 - B](https://www.youtube.com/watch?v=mypkhAFXPPo) - Fix register user and add notification for registering to events
 * [Episode 11 - A](https://www.youtube.com/watch?v=hYqadsJSpdY) - Add topNav, userContext (React ContextApi) and DropDown menu
 * [Episode 11 - B](https://www.youtube.com/watch?v=-Zh37vkUdmc) - Add Accept and Reject actions and protect the routes
@@ -44,6 +44,37 @@ So please share this video with your friends and leave the like.
 * [Episode 13 - A](https://www.youtube.com/watch?v=uhCCB8Vqi9E) - Change backend (API) to save image on S3 Bucket (AWS) 
 * [Episode 13 - B](https://www.youtube.com/watch?v=Mrmdo50zRNU) - Deploying the API and Frontend to Heroku
 
+
+## Fix required for episode 10
+It is natural that after some time and a few updates something break into our codebase because many people forget to install the correct versions.
+So I have decided to update socket.io and socket.io-client to the latest version (3.1.1).
+
+That will fix the cors issue that many of you are facing and prevent the Bootcamp to be outdated.
+
+please check the code for the [server](https://github.com/jeanrauwers/mern-course-bootcamp/blob/master/episode-10-Add-websockets-and-fix-Register/backend/src/server.js) and the [client](https://github.com/jeanrauwers/mern-course-bootcamp/blob/master/episode-10-Add-websockets-and-fix-Register/fronted/src/pages/Dashboard/index.js).
+
+on the server-side please update the server.js to the following code.
+
+```js
+const server = http.Server(app)
+const io = require("socket.io")(server, {
+	cors: {
+		origin: "*",
+		methods: ["GET", "POST", "DELETE"]
+	}
+});
+
+```
+
+on the client side please update the Dashboard page with the following code.
+
+```js
+    const socket = useMemo(
+        () =>
+            socketio.connect('http://localhost:8000/', { query: { user: user_id } }),
+        [user_id]
+    );
+```
 ## Deploying your webapp
 
 For deploying this project we will modificate our backend and start using the S3 data storage from AWS.
