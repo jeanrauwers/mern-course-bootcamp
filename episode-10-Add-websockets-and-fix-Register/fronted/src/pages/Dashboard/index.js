@@ -9,7 +9,6 @@ export default function Dashboard({ history }) {
     const [events, setEvents] = useState([]);
     const user = localStorage.getItem('user');
     const user_id = localStorage.getItem('user_id');
-
     const [rSelected, setRSelected] = useState(null);
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false)
@@ -22,7 +21,7 @@ export default function Dashboard({ history }) {
 
     const socket = useMemo(
         () =>
-            socketio('http://localhost:8000/', { query: { user: user_id } }),
+            socketio.connect('http://localhost:8000/', { query: { user: user_id } }),
         [user_id]
     );
 
