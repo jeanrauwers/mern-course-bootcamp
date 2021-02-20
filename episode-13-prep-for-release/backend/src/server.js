@@ -4,13 +4,15 @@ const cors = require('cors')
 const routes = require('./routes')
 const path = require('path')
 const http = require('http')
-const socketio = require('socket.io')
 const PORT = process.env.PORT || 8000
-
-
 const app = express()
 const server = http.Server(app)
-const io = socketio(server)
+const io = require("socket.io")(server, {
+	cors: {
+		origin: "*",
+		methods: ["GET", "POST", "DELETE"]
+	}
+});
 
 if (process.env.NODE_ENV !== 'production') {
 	require('dotenv').config()
