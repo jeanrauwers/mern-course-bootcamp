@@ -35,9 +35,6 @@ io.on('connection', socket => {
 	const { user } = socket.handshake.query
 
 	connectUsers[user] = socket.id
-	console.log('🚀 ----------------------------------------------------------')
-	console.log('🚀 ~ file: server.js ~ line 33 ~ connectUsers', connectUsers)
-	console.log('🚀 ----------------------------------------------------------')
 })
 
 //app.use()
