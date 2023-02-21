@@ -12,7 +12,7 @@ module.exports = {
 					const events = await Event.findById(eventId)
 
 					if (events) {
-						return res.json({ authData: authData, events: events })
+						return res.json({ authData, events })
 					}
 				} catch (error) {
 					return res.status(400).json({ message: 'EventId does not exist!' })
