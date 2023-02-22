@@ -1,4 +1,4 @@
-# Complete Free Coding Bootcamp with the MERN Stack (For Beginners) 
+# Complete Free Coding Bootcamp with the MERN Stack (Beginners friendly) 
 
 This is a series video and we are going to build a full-stack application from scratch using the MERN STACK (MongoDB, Express, React.js and Nodejs).
 
