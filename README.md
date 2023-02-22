@@ -1,8 +1,8 @@
-# Complete Free Coding Bootcamp 2020 - the MERN Stack (For Beginners) 
+# Complete Free Coding Bootcamp with the MERN Stack (For Beginners) 
 
-This is a series video were we going to build a full-stack application from scratch using the MERN STACK ( MongoDB, Express, React.js and Nodejs).
+This is a series video and we are going to build a full-stack application from scratch using the MERN STACK (MongoDB, Express, React.js and Nodejs).
 
-We will build a <strong>Sports Web App</strong> for creating sports events and the app will include:
+We will build a <strong>Sports Web App</strong> that allows you creating sports events and the app will include:
 
 * User registration and authentication (maybe add facebook/gmail login if the series becomes popular) 
 * Hashing password for security 
@@ -12,13 +12,6 @@ We will build a <strong>Sports Web App</strong> for creating sports events and t
 * Sign UP for event in order to participate
 * Upload images to the server
 * Website notification using web sockets (in order to approve or refuse the Event Sign UP request) 
-
-## Milestones of the project
-
-Series get more than <strong>1000 Stars </strong> I will create a <strong>React-Native</strong> APP for it!<br /> 
-Series get more than <strong>5000 Stars </strong> I will add Social Media functionality such as the USER profile<br />
-
-So please share this video with your friends and leave the like.
 
 ## Need help?
 [We have a discord group](https://discord.gg/7bsz7U5)
